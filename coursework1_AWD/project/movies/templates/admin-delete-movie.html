@@ -1,0 +1,13 @@
+{% extends "./base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h2>Delete Movie</h2>
+<a href="{% url 'admin-dashboard' %}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+<p>Are you sure you want to delete "{{ movie.movie }}"?</p>
+<form action="{% url 'delete_movie' movie.id %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_button button_type="submit" content="Confirm Delete" %}
+</form>
+<a href="{% url 'read_movies' %}" class="btn btn-secondary mt-3">Cancel</a>
+{% endblock %}

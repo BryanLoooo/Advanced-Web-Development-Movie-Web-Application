@@ -1,0 +1,9 @@
+{% extends "./base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h2>Welcome to the Admin Dashboard</h2>
+<p>Manage users, movies, and more from this central location.</p>
+<a href="{% url 'create_movie' %}" class="btn btn-primary">Add New Movie</a>
+<a href="{% url 'read_movies' %}" class="btn btn-primary">Read Movie</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h2>{{ movie.movie }}</h2>
+<p><strong>Runtime:</strong> {{ movie.runtime }} minutes</p>
+<p><strong>Certificate:</strong> {{ movie.certificate }}</p>
+<p><strong>Rating:</strong> {{ movie.rating }}</p>
+<p><strong>Description:</strong> {{ movie.description }}</p>
+<p><strong>Votes:</strong> {{ movie.votes }}</p>
+<a href="{% url 'top-movies' %}" class="btn btn-secondary mt-3">Back to Movies</a>
+{% endblock %}

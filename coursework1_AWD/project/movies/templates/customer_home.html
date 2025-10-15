@@ -1,0 +1,9 @@
+{% extends "./base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h2>Welcome, {{ user.username }}</h2>
+<p>Discover movies tailored to your preferences. Explore our top-rated movies and recommendations.</p>
+
+<a href="{% url 'top-movies' %}" class="btn btn-primary">View Recommended Movies</a>
+{% endblock %}

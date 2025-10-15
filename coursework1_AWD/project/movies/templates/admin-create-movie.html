@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h2>Add a New Movie</h2>
+<form action="{% url 'create_movie' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Submit" %}
+</form>
+<a href="{% url 'admin-dashboard' %}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+{% endblock %}
